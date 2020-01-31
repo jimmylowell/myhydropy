@@ -1,0 +1,4 @@
+openweather:
+  apikey: apikey
+  lat: lat
+  lon: lon
