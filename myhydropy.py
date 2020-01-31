@@ -8,6 +8,7 @@ import urllib.request
 import yaml
 import board
 import Adafruit_DHT
+from prometheus_client import start_http_server, Gauge
 
 OW_URL = "http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&APPID={apikey}"
 
@@ -32,9 +33,7 @@ with open("config.yml", 'r') as ymlfile:
 sensor = Adafruit_DHT.DHT22
 pin = 4
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
 
-from prometheus_client import start_http_server, Gauge
 
 # Import SPI library (for hardware SPI) and MCP3008 library.
 import Adafruit_GPIO.SPI as SPI
